@@ -5,12 +5,13 @@ import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://virusdocs.raulmorales.eu',
 	integrations: [
 		mermaid(),
 		starlight({
 			title: 'Virus Project Docs',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/raulmorales/virus-docs' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/raulmoralesruiz/virus-docs' },
 			],
 			sidebar: [
 				{
