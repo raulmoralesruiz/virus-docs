@@ -1,0 +1,45 @@
+---
+title: Documentación Proyecto Virus
+description: Documentación oficial del proyecto open source Virus.
+template: splash
+hero:
+  tagline: Implementación open source del juego de cartas Virus.
+  image:
+    file: ../../assets/background.svg
+  actions:
+    - text: Ver Arquitectura
+      link: /guides/architecture
+      icon: right-arrow
+      variant: primary
+    - text: Guía de Contribución
+      link: /guides/contributing
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Visión General
+
+Este proyecto es una implementación digital multijugador del popular juego de cartas. El sistema está diseñado para ser modular, escalable y fácil de extender.
+
+<CardGrid stagger>
+	<Card title="Backend en Node.js" icon="setting">
+		Servidor robusto con **Express** y **Socket.IO** que gestiona la lógica de juego, validación de reglas y estado de las salas.
+	</Card>
+	<Card title="Frontend en Angular" icon="laptop">
+		Cliente web moderno y reactivo construido con **Angular**, enfocado en una experiencia de usuario fluida.
+	</Card>
+	<Card title="Comunicación Real-time" icon="rocket">
+		Sincronización instantánea de eventos de juego, chat y salas mediante **WebSockets**.
+	</Card>
+	<Card title="Open Source" icon="open-book">
+		Código abierto bajo licencia AGPLv3, desarrollado por la comunidad para la comunidad.
+	</Card>
+</CardGrid>
+
+## Objetivo de la Documentación
+
+Esta documentación tiene como propósito:
+1.  Servir como fuente de verdad sobre el funcionamiento del sistema.
+2.  Facilitar el onboarding de nuevos desarrolladores.
+3.  Estandarizar los procesos de contribución y convenciones de código.
