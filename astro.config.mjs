@@ -18,20 +18,29 @@ export default defineConfig({
 					label: 'General',
 					items: [
 						{ label: 'Visión General', link: '/' },
-						{ label: 'Arquitectura', link: '/guides/architecture' },
+						{ label: 'Reglas y Mecánicas', link: '/guides/game-mechanics' },
+					],
+				},
+				{
+					label: 'Arquitectura',
+					items: [
+						{ label: 'Frontend (Angular)', link: '/guides/frontend-architecture' },
+						{ label: 'Backend (Node.js)', link: '/guides/backend-architecture' },
 					],
 				},
 				{
 					label: 'Desarrollo',
 					items: [
 						{ label: 'Instalación y Configuración', link: '/guides/installation' },
+						{ label: 'Testing', link: '/guides/testing' },
 						{ label: 'Guía de Contribución', link: '/guides/contributing' },
 					],
 				},
 				{
-					label: 'API Reference',
+					label: 'Referencias',
 					items: [
-						{ label: 'Socket.IO Events', link: '/api/socket-io' },
+						{ label: 'API Socket.IO', link: '/api/socket-io' },
+						{ label: 'Glosario', link: '/reference/glossary' },
 					],
 				},
 			],
