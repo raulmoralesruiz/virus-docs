@@ -24,6 +24,7 @@ export default defineConfig({
 				{
 					label: 'Arquitectura',
 					items: [
+						{ label: 'Visión General', link: '/guides/architecture' },
 						{ label: 'Frontend (Angular)', link: '/guides/frontend-architecture' },
 						{ label: 'Backend (Node.js)', link: '/guides/backend-architecture' },
 					],
