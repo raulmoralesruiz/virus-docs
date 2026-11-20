@@ -1,0 +1,9 @@
+# Copia este archivo a .deployrc y rellena (el .deployrc queda gitignored):
+#   cp .deployrc.example .deployrc
+DEPLOY_HOST=192.168.x.x
+DEPLOY_USER=raul
+# Raíz web REAL: el contenedor Docker `virusdocs` (nginx:alpine, puerto 22014)
+# monta /mnt/data-nas/www/virusdocs/astro → /usr/share/nginx/html.
+# ⚠️ NO apuntar a /mnt/data-nas/www/virusdocs (raíz): allí vive nginx/nginx.conf
+#    (montado como default.conf del contenedor); rsync --delete lo borraría.
+DEPLOY_PATH=/mnt/data-nas/www/virusdocs/astro
