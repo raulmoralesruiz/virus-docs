@@ -134,7 +134,7 @@ Pones tu órgano en **tu propio cuerpo**. Reglas:
 1. **Máximo 1 órgano por color** en tu cuerpo. Intentar poner un segundo órgano del mismo color es un error (`DUPLICATE_ORGAN`).
 2. Al colocarse, el órgano va **limpio** (sin virus ni medicinas).
 3. **Órgano multicolor**: cuenta como un 5.º color para la victoria (un color más de los 4 normales), pero sigue la regla de 1 por color: no puedes tener 2 multicolores.
-4. **Órgano Mutante (naranja, expansión)**: es especial. Al jugarlo **debes elegir uno de tus propios órganos** (de cualquier color): ese órgano y todo lo que tenga adherido (virus y medicinas) se descartan, y el Mutante ocupa su lugar. Es una carta de reemplazo dirigida, no un color normal.
+4. **Órgano Mutante (naranja, expansión)**: es especial. Al jugarlo **debes elegir uno de tus propios órganos** (de cualquier color): ese órgano y todo lo que tenga adherido (virus y medicinas) se descartan, y el Mutante ocupa su lugar. Es una carta de reemplazo dirigida, no un color normal (decisión de diseño: ver [Decisiones de diseño](#decisiones-de-diseño-frente-al-reglamento-oficial)).
 5. El color de un órgano **puede cambiar** por cartas de tratamiento (Ladrón de Colores). La restricción de duplicados se aplica al color *actual* del órgano.
 
 ## Cartas de virus
@@ -160,7 +160,7 @@ Un virus siempre se gasta (va al descarte) en cualquier caso: o se adhiere, o ne
 
 ## Cartas de medicina
 
-Cura o vacuna **un órgano concreto de cualquier jugador**. La medicina se adhiere al órgano.
+Cura o vacuna **un órgano concreto de cualquier jugador** (decisión de diseño: ver [Decisiones de diseño](#decisiones-de-diseño-frente-al-reglamento-oficial)). La medicina se adhiere al órgano.
 
 Reglas de compatibilidad de color: mismas que el virus (mismo color, o cualquiera multicolor).
 
@@ -224,7 +224,7 @@ Carta sin objetivo (afecta a **todos los demás jugadores**):
 **Intercambia tu cuerpo completo con el de un rival** (todos los órganos, con sus virus y medicinas).
 
 - No hay comprobación de duplicados de color (los cuerpos se intercambian tal cual).
-- **Truco o Trato, si estaba sobre alguno de los dos cuerpos, pasa al jugador que queda con ese cuerpo** (la maldición viaja con el cuerpo, no con la persona).
+- **Truco o Trato, si estaba sobre alguno de los dos cuerpos, pasa al jugador que queda con ese cuerpo** (la maldición viaja con el cuerpo, no con la persona; regla de casa).
 
 ### Expansión Halloween
 
@@ -234,8 +234,10 @@ Carta sin objetivo (afecta a **todos los demás jugadores**):
 
 - Es visible para todos en su cuerpo.
 - **Puede transferirse**: si *tú* eres el portador y aplicas una medicina sobre un órgano de un rival, la maldición pasa al rival (es la forma de pasarle la patata).
-- **Viaja con el cuerpo** en *Error Médico* y *Cambio de Cuerpos*.
-- Si el portador **abandona la partida**, la maldición desaparece.
+- **Viaja con el cuerpo** en *Error Médico* y *Cambio de Cuerpos* (regla de casa).
+- Si el portador **abandona la partida**, la maldición desaparece (regla de casa).
+
+Ver [Decisiones de diseño](#decisiones-de-diseño-frente-al-reglamento-oficial).
 
 #### Experimento Fallido (2 copias)
 
@@ -307,6 +309,17 @@ Resumen de la mecánica completa:
 - **Ladrón de Colores / Trasplante Alien**: sí pueden robar/intercambiar órganos inmunes.
 - La inmunidad **viaja con el órgano**: si robas un órgano inmune, tú lo tienes inmune.
 
+### Decisiones de diseño (frente al reglamento oficial)
+
+Algunos comportamientos están **decididos a propósito** al implementar el juego: o siguen el reglamento oficial de *Virus! / Virus! Halloween* (Tranjis Games) y se documentan aquí para evitar dudas, o son **reglas de casa** que desvían el oficial de forma deliberada.
+
+| # | Caso | Texto oficial | Decisión de esta implementación | Motivo |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | **Reciclado del descarte** | "Cuando el mazo se haya agotado, sencillamente voltea la pila de descartes. No es necesario barajarla de nuevo." | **Regla de casa:** al reciclarse, la pila **se baraja** (conservando la carta superior visible). | En el juego digital, sin barajar, los jugadores pueden memorizar el orden del descarte y predecir todos los robos restantes. |
+| 2 | **Truco o Trato** | "Un jugador no podrá ganar la partida mientras tenga Truco o Trato en su cuerpo. Para deshacerte de Truco o Trato, cura, vacuna o inmuniza un órgano de otro jugador y pasa automáticamente la carta al cuerpo de ese jugador." | **Se mantiene** el oficial, **más dos reglas de casa:** la maldición **viaja con el cuerpo** (*Error Médico*, *Cambio de Cuerpos*) y **desaparece si el portador abandona** la partida. | Coherente con la idea de que la maldición está "sobre el cuerpo". |
+| 3 | **Órgano Mutante** | "Descarta un órgano de tu cuerpo (…) y reemplázalo por el Órgano Mutante. El Órgano Mutante se considera un órgano de color naranja y cuenta como un órgano extra para completar tu cuerpo." | **Reemplazo:** el Mutante ocupa el lugar del órgano descartado (no es un 5.º órgano adicional). El **naranja** cuenta como color propio: ocupa un hueco de color para completar los 4 órganos. Le afectan cartas multicolor y tratamientos. | Coherente con el "reemplázalo" del texto oficial; "órgano extra" se interpreta como "un color más del que necesitas para ganar". |
+| 4 | **Medicina sobre órganos ajenos** | "Utiliza las cartas de medicina sólo sobre cartas (virus u órganos) de su mismo color" — sin restricción de propiedad, y el propio *Truco o Trato* exige "cura, vacuna o inmuniza un órgano de otro jugador". | **Se mantiene:** se puede curar, vacunar e inmunizar órganos de **cualquier jugador**. | Es lo oficial, y es la única forma de deshacerse de *Truco o Trato*. |
+
 ## Fallo del turno y tiempos
 
 - **Reloj de turno**: cada jugador tiene el tiempo configurado en la sala (30/60/90/120 s, por defecto 60 s). El contador se ve para todos (`remainingSeconds` en el estado público).
@@ -339,5 +352,5 @@ Resumen de la mecánica completa:
 | ¿Qué es la inmunidad? | 2 medicinas en un órgano: inmune a virus y a más medicinas |
 | ¿Qué es Truco o Trato? | El portador **no puede ganar**; la maldición puede pasarse o viajar con el cuerpo |
 | ¿Se puede robar un órgano inmune? | Solo con Ladrón de Colores o Trasplante Alien |
-| ¿Qué pasa si me quedo sin mazo? | Se recicla el descarte (se baraja) automáticamente |
+| ¿Qué pasa si me quedo sin mazo? | Se recicla el descarte (se baraja) automáticamente — **regla de casa**: el reglamento oficial no baraja |
 | ¿Se puede jugar en móvil? | Sí: es una PWA instalable y la interfaz es responsive |
