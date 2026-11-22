@@ -19,6 +19,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Visión General', link: '/' },
 						{ label: 'Reglas y Mecánicas', link: '/guides/game-mechanics' },
+						{ label: 'FAQ Oficial (Tranjis)', link: '/reference/faq-tranjis' },
 					],
 				},
 				{
